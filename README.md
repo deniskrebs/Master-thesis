@@ -12,6 +12,6 @@ core_team_data.R  =   Skript to extract raw data only for the core team (because
 
 6_1_Communities   =   Skript for community detection (louvain, label propagation, walktrap)
 
-Output timescale  =   Output from algorithm which determins at which time a snapshop of the temporal network should be made
+Output timescale  =   Output from algorithm which determins at which time a snapshop of the temporal network should be made & Skript to get this output
 
 PDFs              =   timescale paper (Detection of timescales in evolving complex networks), second-order networks (Higher Order Aggregate Networks in the Analysis of temporal networks), why louvain algorithm for community detection (Fast unfolding of communities in large networks & A comparative analysis of community detection algorithms on artificial networks), Quantifizieren von Modularität (A network perspective on software modularity)
