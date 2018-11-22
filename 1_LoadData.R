@@ -96,14 +96,15 @@ colnames(nodes)[7] <- "r3.type"
 colnames(nodes)[8] <- "company.type"
 colnames(nodes)[9] <- "person"
 
-nodes$company.type <- as.numeric(nodes$company.type)
-nodes$sp1.type <- as.numeric(nodes$sp1.type)
-nodes$sp2.type <- as.numeric(nodes$sp2.type)
-nodes$sp3.type <- as.numeric(nodes$sp3.type)
-nodes$r1.type <- as.numeric(nodes$r1.type)
-nodes$r2.type <- as.numeric(nodes$r2.type)
-nodes$r3.type <- as.numeric(nodes$r3.type)
-nodes$person <- as.numeric(nodes$person)
+
+nodes$company.type <- as.numeric(as.character(nodes$company.type))
+nodes$sp1.type <- as.numeric(as.character(nodes$sp1.type))
+nodes$sp2.type <- as.numeric(as.character(nodes$sp2.type))
+nodes$sp3.type <- as.numeric(as.character(nodes$sp3.type))
+nodes$r1.type <- as.numeric(as.character(nodes$r1.type))
+nodes$r2.type <- as.numeric(as.character(nodes$r2.type))
+nodes$r3.type <- as.numeric(as.character(nodes$r3.type))
+nodes$person <- as.numeric(as.character(nodes$person))
 
 nodes$sp2.name <- nodes$sp2.type
 nodes$sp2.name <- replace(nodes$sp2.name, nodes$sp2.name == "0", "NA")
