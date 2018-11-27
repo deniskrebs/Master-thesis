@@ -12,6 +12,10 @@ core_team_data.R = Skript to extract raw data only for the core team (because fo
 
 6_1_Communities = Skript for community detection (louvain, label propagation, walktrap)
 
+6_1_core_team_data  = Skript to split up data into C-C (communication only between core team members), C-SG (communication between a core team member and a site-group member), SG-SG (communication only between site-group members) 
+
+6_1_Comparison_coreteam_sitegroup = Compare Date between the 3 groups (C-C, C-SG, SG-SG) 
+
 6_2_Split_timescale = Split data according to dynsnap results (and additionally every 4 weeks to see the differences)
 
 Output timescale = Output from algorithm which determins at which time a snapshop of the temporal network should be made & Skript to get this output
