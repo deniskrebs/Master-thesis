@@ -4,7 +4,9 @@ Data.zip = raw data with 3 columns (Von, An, Date)
 
 core_team_data.R = Skript to extract raw data only for the core team (because for others no subproject assigned)
 
-1_LoadData = Skript to load and prepare raw data
+0_Start = Skript to load raw data
+
+1_LoadData = Skript to prepare raw data
 
 6_1_Centrality = Skript for centrality measures (degree, betweenness, closeness)
 
