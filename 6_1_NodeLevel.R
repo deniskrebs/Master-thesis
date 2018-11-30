@@ -7,6 +7,10 @@ source("./1_LoadData.R")
 
 ################## NODE LEVEL - DISCRIPTIVE
 
+vcount(g.un)
+ecount(g.un)
+
+
 ################## CONNECTED COMPONENTS
 components(g, mode = "strong")  # 578 nodes (97%) are strongly connected (respect the direction)
 components(g, mode = "weak")  # All nodes are weakly connected (disregarding the direction)
@@ -25,7 +29,6 @@ reciprocity(g.simp, ignore.loops = TRUE)  # why not the same as for g? (Simplify
 #mutual links facilitate the transportation process
 #do mutual links occur more or less often than expected by chance
 # --> as expected: most connections are reciprocal
-
 
 
 

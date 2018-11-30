@@ -3,12 +3,14 @@
 setwd("C:/Users/Denis Krebs/Desktop/Thesis/Analysis")
 
 source("./1_LoadData.R") 
-source("./core_team_data.R")
+source("./6_1_core_team_data.R")
 
-# number of nodes included in subset
+# number of nodes/edges included in subset
 ncol(as.data.frame((rbind(unique(data_C_C$Von), unique(data_C_C$an)))))
 ncol(as.data.frame((rbind(unique(data_C_SG$Von), unique(data_C_SG$an)))))
 ncol(as.data.frame((rbind(unique(data_SG_SG$Von), unique(data_SG_SG$an)))))
+
+
 
 
 # number of edges inkl. percentage
@@ -20,9 +22,11 @@ nrow(data_SG_SG)
 nrow(data_SG_SG)/nrow(data)*100
 
 
+
 # response time
 
 ## do the response times differ in the 3 groups
+
 
 
 # average degree

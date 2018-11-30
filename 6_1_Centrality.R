@@ -36,8 +36,6 @@ centr_degree(g.un) #INTERPRETATION?
 degree_all <- data.frame(degree(g.un, loops = FALSE))
 mean(degree(g.un, loops = FALSE)) #involved in 5952 mails on average (10 mails per day)
 quantile(degree(g.un, loops = FALSE)) # 3/4 of the nodes have a degree smaller than 8809 and only 1/4 more (up to 42885 mails in 595 days (72 mails per day))
-density(degree(g.un, loops = FALSE))       #why is density min. -4190 and max. 47077 (4192 to high)?
-plot(density(degree(g.un, loops = FALSE)))    #INTERPRETATION?
 pdf("./R_Output/cache/degree_g.un.pdf")
 hist(degree(g.un),main="Number of Mails (in & out)",
      xlab="total degree (g.un)",
@@ -62,8 +60,6 @@ centr_degree(g.simp.un) #INTERPRETATION?
 degree_simp <- data.frame(degree(g.simp.un, loops = FALSE))
 mean(degree(g.simp.un, loops = FALSE)) #contact to 64 persons on average
 quantile(degree(g.simp.un, loops = FALSE)) # 3/4 of the nodes have contact to less than 82 persons and only 1/4 more (up to 566)
-density(degree(g.simp.un, loops = FALSE))       #why is density min. -25.95 and max. 592.95 (25.95 to high)?
-plot(density(degree(g.simp.un, loops = FALSE)))    #INTERPRETATION?
 pdf("./R_Output/cache/degree_g.simp.un.pdf")
 hist(degree(g.simp.un),main="Number of People (in & out)",
      xlab="total degree (g.simp.un)",
@@ -106,8 +102,6 @@ degree_simp[order(degree_simp$degree.g.simp.un..loops...FALSE.,decreasing=T)[1:5
 betweenness_un <- data.frame(betweenness(g.un)) # max possible value (theoretically): n2???(n???1)=n2???n+1=352'241
 mean(betweenness(g.un))  # on average a node lies on 272 shortest paths
 quantile(betweenness(g.un)) # 3/4 of the nodes are on less than 178 shortest paths and only 1/4 on more (up to 47605)
-density(betweenness(g.un))       #why is density min. -97.37 and max. 47702.91 (97.37 to high)?
-plot(density(betweenness(g.un)))  #INTERPRETATION?
 pdf("./R_Output/cache/betweenness_g.un.pdf")
 hist(betweenness(g.un),main="Number of shortest paths",
      xlab="beteweenness (g.un)",
@@ -139,14 +133,12 @@ betweenness_un[order(betweenness_un$betweenness.g.un.,decreasing=T)[1:5],]
 closeness_un <- data.frame(closeness(g.un)) 
 mean(closeness(g.un))  #INTERPRETATION?
 quantile(closeness(g.un))  #INTERPRETATION?
-density(closeness(g.un))    #INTERPRETATION?
-plot(density(closeness(g.un)))  #INTERPRETATION?
 pdf("./R_Output/cache/closeness_g.un.pdf")
 hist(closeness(g.un),main="Closeness",
-     xlab="closeness (g.un)",
-     ylab="frequency",
-     col="deepskyblue",
-     freq=TRUE)
+       xlab="closeness (g.un)",
+       ylab="frequency",
+       col="deepskyblue",
+       freq=TRUE)
 m <- mean(closeness(g.un))
 s <-  sd(closeness(g.un))
 curve(dnorm(x,m,s),add=TRUE,lwd=3)   #INTERPRETATION?
@@ -154,12 +146,12 @@ box()
 dev.off()
 closeness_un[order(closeness_un$closeness.g.un.,decreasing=T)[1:5],] 
 # nodes wich are the closest: 00.01.00.00.00.00.15.013, 12.02.00.00.00.00.10.053, 04.02.00.00.00.00.08.030, 00.01.00.00.00.00.02.005, 00.01.00.00.00.00.03.023
-
-
-
-
-
-
+  
+  
+  
+  
+  
+  
 
 
 setwd("C:/Users/Denis Krebs/Desktop/Thesis/Analysis/R_Output/cache")

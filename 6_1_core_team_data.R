@@ -17,3 +17,21 @@ data_C_C <- subset(data, data$Von %in% core_team$ID & data$An %in% core_team$ID)
 data_C_SG <- subset(data, xor(data$Von %in% core_team$ID, data$An %in% core_team$ID)) # edges only between SG-member and core team member
 data_SG_SG <- subset(data, !(data$Von %in% core_team$ID) & !(data$An %in% core_team$ID)) # edges only between core team
 
+
+
+#data <- data_C_C
+#source("./6_1_Centrality.R")
+#source("./6_1_NodeLevel.R")
+#source("./6_1_Communities.R")
+
+
+#data <- data_C_SG
+#source("./6_1_Centrality.R")
+#source("./6_1_NodeLevel.R")
+#source("./6_1_Communities.R")
+
+
+#data <- data_SG_SG
+#source("./6_1_Centrality.R")
+#source("./6_1_NodeLevel.R")
+#source("./6_1_Communities.R")

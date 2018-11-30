@@ -234,11 +234,13 @@ sum(nodes$degree)/2
 # graph varieties
 g <- graph_from_edgelist(edgelist, directed = TRUE)
 g.un <- graph_from_edgelist(edgelist, directed = FALSE)
-g.simp <- igraph::simplify(g)
+E(g)$weight = 1
+g.simp <- igraph::simplify(g,  edge.attr.comb = list(weight="sum"))
 #g.simp <- graph_from_data_frame(d=links, vertices=nodes, directed = T)
 #g.simp <- set_edge_attr(g.simp, "weight", value= links$Anzahl)
 #g.simp <- igraph::simplify(g.simp, remove.multiple = TRUE, remove.loops = TRUE)
-g.simp.un <- igraph::simplify(g.un)
+E(g.un)$weight = 1
+g.simp.un <- igraph::simplify(g.un, edge.attr.comb = list(weight="sum"))
 #g.simp.un <- graph_from_data_frame(d=links, vertices=nodes, directed = F)
 #g.simp.un <- set_edge_attr(g.simp.un, "weight", value= links$Anzahl)
 #g.simp.un <- igraph::simplify(g.simp.un, remove.multiple = TRUE, remove.loops = TRUE)
