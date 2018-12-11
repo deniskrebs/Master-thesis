@@ -2,11 +2,6 @@
 setwd("C:/Users/Denis Krebs/Desktop/Thesis/Analysis")
 
 
-
-source("./0_Start.R")        ################ Skip if not complete data (IF C-C, C-SG, SG-SG, ...) ###########################
-
-
-
 # edgelist from raw data
 edgelist <- data[, c(1, 2)]
 edgelist <- na.omit(edgelist)
@@ -14,6 +9,8 @@ edgelist <- as.matrix(edgelist)
 
 g <- graph_from_edgelist(edgelist, directed = TRUE)
 vcount(g)
+
+write(edgelist, file = "complete.edges")
 
 
 # nodes
@@ -244,7 +241,7 @@ g.simp.un <- igraph::simplify(g.un, edge.attr.comb = list(weight="sum"))
 #g.simp.un <- graph_from_data_frame(d=links, vertices=nodes, directed = F)
 #g.simp.un <- set_edge_attr(g.simp.un, "weight", value= links$Anzahl)
 #g.simp.un <- igraph::simplify(g.simp.un, remove.multiple = TRUE, remove.loops = TRUE)
-pdf("./R_Output/cache/graph_g.simp.un.pdf")
+pdf("./R_Output/6.1/graph_g.simp.un.pdf")
 plot(g.simp.un, vertex.size=3, edge.arrow.size=0.02, vertex.label.font=1, vertex.label.cex = 0.01)
 dev.off()
 

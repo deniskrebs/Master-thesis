@@ -2,6 +2,8 @@
 # Set the working directory to the folder containing the workshop files:
 setwd("C:/Users/Denis Krebs/Desktop/Thesis/Analysis")
 
+
+source("./0_Start.R")        ################ Skip if not complete data (IF C-C, C-SG, SG-SG, ...) ###########################
 source("./1_LoadData.R") 
 
 #################### NODE-LEVEL
@@ -36,7 +38,7 @@ centr_degree(g.un) #INTERPRETATION?
 degree_all <- data.frame(degree(g.un, loops = FALSE))
 mean(degree(g.un, loops = FALSE)) #involved in 5952 mails on average (10 mails per day)
 quantile(degree(g.un, loops = FALSE)) # 3/4 of the nodes have a degree smaller than 8809 and only 1/4 more (up to 42885 mails in 595 days (72 mails per day))
-pdf("./R_Output/cache/degree_g.un.pdf")
+pdf("./R_Output/6.1/degree_g.un.pdf")
 hist(degree(g.un),main="Number of Mails (in & out)",
      xlab="total degree (g.un)",
      ylab="probability density",
@@ -60,7 +62,7 @@ centr_degree(g.simp.un) #INTERPRETATION?
 degree_simp <- data.frame(degree(g.simp.un, loops = FALSE))
 mean(degree(g.simp.un, loops = FALSE)) #contact to 64 persons on average
 quantile(degree(g.simp.un, loops = FALSE)) # 3/4 of the nodes have contact to less than 82 persons and only 1/4 more (up to 566)
-pdf("./R_Output/cache/degree_g.simp.un.pdf")
+pdf("./R_Output/6.1/degree_g.simp.un.pdf")
 hist(degree(g.simp.un),main="Number of People (in & out)",
      xlab="total degree (g.simp.un)",
      ylab="probability density",
@@ -102,7 +104,7 @@ degree_simp[order(degree_simp$degree.g.simp.un..loops...FALSE.,decreasing=T)[1:5
 betweenness_un <- data.frame(betweenness(g.un)) # max possible value (theoretically): n2???(n???1)=n2???n+1=352'241
 mean(betweenness(g.un))  # on average a node lies on 272 shortest paths
 quantile(betweenness(g.un)) # 3/4 of the nodes are on less than 178 shortest paths and only 1/4 on more (up to 47605)
-pdf("./R_Output/cache/betweenness_g.un.pdf")
+pdf("./R_Output/6.1/betweenness_g.un.pdf")
 hist(betweenness(g.un),main="Number of shortest paths",
      xlab="beteweenness (g.un)",
      ylab="probability density",
@@ -133,7 +135,7 @@ betweenness_un[order(betweenness_un$betweenness.g.un.,decreasing=T)[1:5],]
 closeness_un <- data.frame(closeness(g.un)) 
 mean(closeness(g.un))  #INTERPRETATION?
 quantile(closeness(g.un))  #INTERPRETATION?
-pdf("./R_Output/cache/closeness_g.un.pdf")
+pdf("./R_Output/6.1/closeness_g.un.pdf")
 hist(closeness(g.un),main="Closeness",
        xlab="closeness (g.un)",
        ylab="frequency",
@@ -154,7 +156,7 @@ closeness_un[order(closeness_un$closeness.g.un.,decreasing=T)[1:5],]
   
 
 
-setwd("C:/Users/Denis Krebs/Desktop/Thesis/Analysis/R_Output/cache")
+setwd("C:/Users/Denis Krebs/Desktop/Thesis/Analysis/R_Output/6.1")
 
 ##compare centrality measures
 centrality <- data.frame(V(g)$name, degree_simp, degree_all, betweenness_un, closeness_un)

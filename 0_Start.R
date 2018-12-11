@@ -40,7 +40,7 @@ library(data.table)
 #raw <- subset(raw, select = -V1)
 #raw <- subset(raw, select = -V1)
 
-#data <- raw[,c("Von", "An", "DATE", "TIME")]
+#data <- raw[,c("Von", "An", "DATE", "TIME", "Betreff")]
 #data <- na.omit(data)
 #write.csv(data, file = "data.csv")
 

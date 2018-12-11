@@ -2,6 +2,8 @@
 # Set the working directory to the folder containing the workshop files:
 setwd("C:/Users/Denis Krebs/Desktop/Thesis/Analysis")
 
+
+source("./0_Start.R")        ################ Skip if not complete data (IF C-C, C-SG, SG-SG, ...) ###########################
 source("./1_LoadData.R") 
 
 
@@ -83,7 +85,7 @@ E(g.simp.un, path=d)$color = "red"
 E(g.simp.un, path=d)$width = 2
 V(g.simp.un)$color  = "white"
 V(g.simp.un)[d]$color = "red"
-pdf("./R_Output/cache/diameter_g.simp.un.pdf")
+pdf("./R_Output/6.1/diameter_g.simp.un.pdf")
 plot(g.simp.un, vertex.label = NA, vertex.size=1, edge.curved=.25, edge.arrow.size=0.01)
 dev.off()
 

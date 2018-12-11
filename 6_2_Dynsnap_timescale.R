@@ -4,6 +4,8 @@ library(igraph)
 
 setwd("C:/Users/Denis Krebs/Desktop/Thesis/Analysis")
 
+
+source("./0_Start.R")        ################ Skip if not complete data (IF C-C, C-SG, SG-SG, ...) ###########################
 source("./1_LoadData.R") 
 
 
