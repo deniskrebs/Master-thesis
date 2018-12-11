@@ -1,0 +1,5 @@
+"degree.g.simp.un..loops...FALSE.","degree.g.un..loops...FALSE.","betweenness.g.un.","closeness.g.un."
+"degree.g.simp.un..loops...FALSE.",1,0.524206571380171,0.529015801461718,0.910833974532284
+"degree.g.un..loops...FALSE.",0.524206571380171,1,0.137703086287488,0.446462025738561
+"betweenness.g.un.",0.529015801461718,0.137703086287488,1,0.579278249551204
+"closeness.g.un.",0.910833974532284,0.446462025738561,0.579278249551204,1
