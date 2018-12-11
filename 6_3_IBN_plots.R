@@ -219,9 +219,6 @@ dev.off()
 
 
 #significtly different
-t.test(dynsnap_IBN$Mean, dynsnap_IBN_degseq$Mean)
-t.test(dynsnap_IBN$Mean, dynsnap_IBN_er$Mean)
-t.test(dynsnap_IBN_degseq$Mean, dynsnap_IBN_er$Mean)
 
 library("ggpubr")
 pdf("./R_Output/6.3/IBN_compare.pdf")
@@ -231,12 +228,19 @@ ggboxplot(IBN, x = "network", y = "Mean",
           ylab = "IBN", xlab = "Networks")
 dev.off()
 
-pairwise.t.test(IBN$Mean, IBN$network)
+#pairwise.t.test(IBN$Mean, IBN$network)
 
 
-IBN_dyn_er <- subset(IBN, c(IBN$network == "Erdos-Renyi model" | IBN$network == "ONE dataset"))
-IBN_dyn_degseq <- subset(IBN, c(IBN$network == "Configuration model" | IBN$network == "ONE dataset"))
-pairwise.t.test(IBN_dyn_er$Mean, IBN_dyn_er$network)
-pairwise.t.test(IBN_dyn_degseq$Mean, IBN_dyn_degseq$network)
+IBN_compare <- as.data.frame(IBN$Time[1:11])
+colnames(IBN_compare) <- "Time"
+IBN_ONE <- subset(IBN, IBN$network == "ONE dataset")
+IBN_compare$ONE_dataset <- IBN_ONE$Mean
 
+IBN_ErdosRenyi <- subset(IBN, IBN$network == "Erdos-Renyi model")
+IBN_compare$ErdosRenyi_model <- IBN_ErdosRenyi$Mean
 
+IBN_Configuration <- subset(IBN, IBN$network == "Configuration model")
+IBN_compare$Configuration_model <- IBN_Configuration$Mean
+
+t.test(IBN_compare$ONE_dataset, IBN_compare$Configuration_model, mu=0, alt="two.sided", paired=T, conf.level = 0.99)
+t.test(IBN_compare$ONE_dataset, IBN_compare$ErdosRenyi_model, mu=0, alt="two.sided", paired=T, conf.level = 0.99)
